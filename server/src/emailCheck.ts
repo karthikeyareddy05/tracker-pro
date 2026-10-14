@@ -73,8 +73,9 @@ export async function checkResendConfig(
   }
 
   if (response.ok) {
-    if (domain && domain !== "resend.dev" && Array.isArray(body?.data)) {
-      const match = body.data.find((d) => d.name?.toLowerCase() === domain);
+    const domains = body?.data;
+    if (domain && domain !== "resend.dev" && Array.isArray(domains)) {
+      const match = domains.find((d) => d.name?.toLowerCase() === domain);
       sender = match?.status === "verified" ? "domain_verified" : "domain_not_verified";
     }
     return { key: "valid", keyAccess: "full", sender, detail: "Resend accepted the API key (full access)." };
