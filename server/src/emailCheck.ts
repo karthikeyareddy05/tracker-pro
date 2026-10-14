@@ -64,9 +64,10 @@ export async function checkResendConfig(
     return { key: "unverified", sender, detail: "Couldn't reach api.resend.com to check the key (network error)." };
   }
 
-  let body: { name?: string; data?: { name?: string; status?: string }[] } | null = null;
+  type ResendDomainsBody = { name?: string; data?: { name?: string; status?: string }[] };
+  let body: ResendDomainsBody | null = null;
   try {
-    body = (await response.json()) as typeof body;
+    body = (await response.json()) as ResendDomainsBody;
   } catch {
     body = null;
   }
