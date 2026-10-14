@@ -1,0 +1,475 @@
+NOTE: building the TEST-ACCOUNTS variant (offline sign-in with built-in test accounts, no server).
+== Building web bundle
+
+> tracker-pro-app@1.0.0 build
+> vite build
+
+[36mvite v5.4.21 [32mbuilding for production...[36m[39m
+transforming...
+[32m✓[39m 141 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                                             [39m[1m[2m  0.72 kB[22m[1m[22m[2m │ gzip:  0.39 kB[22m
+[2mdist/[22m[2massets/[22m[32minter-vietnamese-wght-normal-CBcvBZtf.woff2     [39m[1m[2m 10.25 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32minter-greek-ext-wght-normal-DlzME5K_.woff2      [39m[1m[2m 11.23 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32mfraunces-vietnamese-wght-normal-CnvboYUG.woff2  [39m[1m[2m 11.57 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32minter-cyrillic-wght-normal-DqGufNeO.woff2       [39m[1m[2m 18.75 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32minter-greek-wght-normal-CkhJZR-_.woff2          [39m[1m[2m 19.00 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32minter-cyrillic-ext-wght-normal-BOeWTOD4.woff2   [39m[1m[2m 25.96 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32mfraunces-latin-ext-wght-normal-Ca2vKHc0.woff2   [39m[1m[2m 33.58 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32mfraunces-latin-wght-normal-ukD16Tqj.woff2       [39m[1m[2m 36.62 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32minter-latin-wght-normal-Dx4kXJAl.woff2          [39m[1m[2m 48.26 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32minter-latin-ext-wght-normal-DO1Apj_S.woff2      [39m[1m[2m 85.07 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32msql-wasm-DfANybxk.wasm                          [39m[1m[2m658.41 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[35mindex-vnQNk7-C.css                              [39m[1m[2m 24.65 kB[22m[1m[22m[2m │ gzip:  5.78 kB[22m
+[2mdist/[22m[2massets/[22m[36mweb-DFNsfsku.js                                 [39m[1m[2m  0.12 kB[22m[1m[22m[2m │ gzip:  0.13 kB[22m
+[2mdist/[22m[2massets/[22m[36mindex-Dd8lHlXf.js                               [39m[1m[2m  0.27 kB[22m[1m[22m[2m │ gzip:  0.22 kB[22m
+[2mdist/[22m[2massets/[22m[36mindex-9t_BtHfc.js                               [39m[1m[2m  0.33 kB[22m[1m[22m[2m │ gzip:  0.24 kB[22m
+[2mdist/[22m[2massets/[22m[36mindex-Dx50mk8o.js                               [39m[1m[2m  0.36 kB[22m[1m[22m[2m │ gzip:  0.24 kB[22m
+[2mdist/[22m[2massets/[22m[36mnative-BMUj_PGz.js                              [39m[1m[2m  0.75 kB[22m[1m[22m[2m │ gzip:  0.35 kB[22m
+[2mdist/[22m[2massets/[22m[36mweb-eiNyRDO7.js                                 [39m[1m[2m  0.76 kB[22m[1m[22m[2m │ gzip:  0.36 kB[22m
+[2mdist/[22m[2massets/[22m[36mweb-Dj_qxMdJ.js                                 [39m[1m[2m  0.79 kB[22m[1m[22m[2m │ gzip:  0.41 kB[22m
+[2mdist/[22m[2massets/[22m[36mbase-D6h2TEA1.js                                [39m[1m[2m  2.53 kB[22m[1m[22m[2m │ gzip:  0.93 kB[22m
+[2mdist/[22m[2massets/[22m[36mcalendar-COHJTMZZ.js                            [39m[1m[2m  5.69 kB[22m[1m[22m[2m │ gzip:  2.22 kB[22m
+[2mdist/[22m[2massets/[22m[36minsights-Dj5l_epH.js                            [39m[1m[2m  8.32 kB[22m[1m[22m[2m │ gzip:  2.92 kB[22m
+[2mdist/[22m[2massets/[22m[36mtrack-Cd4ip918.js                               [39m[1m[2m  9.22 kB[22m[1m[22m[2m │ gzip:  3.34 kB[22m
+[2mdist/[22m[2massets/[22m[36mprofile-DHbxYYp2.js                             [39m[1m[2m  9.48 kB[22m[1m[22m[2m │ gzip:  3.14 kB[22m
+[2mdist/[22m[2massets/[22m[36mweb-BmjNQ61C.js                                 [39m[1m[2m  9.63 kB[22m[1m[22m[2m │ gzip:  1.34 kB[22m
+[2mdist/[22m[2massets/[22m[36mnativeDriver-DpRzwho3.js                        [39m[1m[2m 14.49 kB[22m[1m[22m[2m │ gzip:  2.94 kB[22m
+[2mdist/[22m[2massets/[22m[36mwebDriver-pS8_u4xu.js                           [39m[1m[2m 41.49 kB[22m[1m[22m[2m │ gzip: 15.05 kB[22m
+[2mdist/[22m[2massets/[22m[36mindex-CZW90STj.js                               [39m[1m[2m278.04 kB[22m[1m[22m[2m │ gzip: 89.02 kB[22m
+[32m✓ built in 1.38s[39m
+== Generating icons and splash screens
+[log] xml(load) at /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/AndroidManifest.xml
+[log] xml(load) Found root namespaces in XML file: http://schemas.android.com/apk/res/android
+Generating assets for android
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-ldpi/ic_launcher.png (592 B)
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-mdpi/ic_launcher.png (903 B)
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-hdpi/ic_launcher.png (1.83 KB)
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png (2.73 KB)
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png (4.86 KB)
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png (6.2 KB)
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-ldpi/ic_launcher_round.png (1.32 KB)
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png (1.76 KB)
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png (2.81 KB)
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png (3.68 KB)
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png (5.72 KB)
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png (7.27 KB)
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-ldpi/ic_launcher_foreground.png (760 B)
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png (1.01 KB)
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png (1.57 KB)
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png (2.22 KB)
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png (3.4 KB)
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png (3.98 KB)
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-ldpi/ic_launcher_background.png (161 B)
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-mdpi/ic_launcher_background.png (212 B)
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-hdpi/ic_launcher_background.png (300 B)
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-xhdpi/ic_launcher_background.png (426 B)
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_background.png (835 B)
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_background.png (1.12 KB)
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+CREATE android icon /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+CREATE android splash /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable/splash.png (8.12 KB)
+CREATE android splash /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable-land-ldpi/splash.png (4.75 KB)
+CREATE android splash /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable-land-mdpi/splash.png (8.34 KB)
+CREATE android splash /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable-land-hdpi/splash.png (15.82 KB)
+CREATE android splash /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable-land-xhdpi/splash.png (29.4 KB)
+CREATE android splash /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable-land-xxhdpi/splash.png (43.29 KB)
+CREATE android splash /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable-land-xxxhdpi/splash.png (61.19 KB)
+CREATE android splash /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable-port-ldpi/splash.png (4.64 KB)
+CREATE android splash /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable-port-mdpi/splash.png (8.12 KB)
+CREATE android splash /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable-port-hdpi/splash.png (15.7 KB)
+CREATE android splash /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable-port-xhdpi/splash.png (31.35 KB)
+CREATE android splash /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable-port-xxhdpi/splash.png (45.52 KB)
+CREATE android splash /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable-port-xxxhdpi/splash.png (60.51 KB)
+CREATE android splash-dark /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable-night/splash.png (4.49 KB)
+CREATE android splash-dark /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable-land-night-ldpi/splash.png (4.49 KB)
+CREATE android splash-dark /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable-land-night-mdpi/splash.png (7.69 KB)
+CREATE android splash-dark /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable-land-night-hdpi/splash.png (14.99 KB)
+CREATE android splash-dark /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable-land-night-xhdpi/splash.png (27.79 KB)
+CREATE android splash-dark /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable-land-night-xxhdpi/splash.png (41.75 KB)
+CREATE android splash-dark /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable-land-night-xxxhdpi/splash.png (59.09 KB)
+CREATE android splash-dark /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable-port-night-ldpi/splash.png (4.4 KB)
+CREATE android splash-dark /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable-port-night-mdpi/splash.png (7.59 KB)
+CREATE android splash-dark /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable-port-night-hdpi/splash.png (14.91 KB)
+CREATE android splash-dark /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable-port-night-xhdpi/splash.png (29.78 KB)
+CREATE android splash-dark /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable-port-night-xxhdpi/splash.png (44 KB)
+CREATE android splash-dark /home/runner/work/tracker-pro/tracker-pro/app/android/app/src/main/res/drawable-port-night-xxxhdpi/splash.png (58.43 KB)
+
+
+Totals:
+android: 74 generated, 711.69 KB total
+== Syncing web assets and plugins
+✔ Copying web assets from dist to android/app/src/main/assets/public in 8.61ms
+✔ Creating capacitor.config.json in android/app/src/main/assets in 613.73μs
+✔ copy android in 22.95ms
+✔ Updating Android plugins in 5.07ms
+[info] Found 6 Capacitor plugins for android:
+       @aparajita/capacitor-secure-storage@7.1.6
+       @capacitor-community/sqlite@7.0.3
+       @capacitor/app@7.1.2
+       @capacitor/keyboard@7.0.6
+       @capacitor/splash-screen@7.0.5
+       @capacitor/status-bar@7.0.6
+✔ update android in 44.14ms
+[info] Sync finished in 0.087s
+== Applying Android configuration
+        versionCode 11
+        versionName "1.0.11"
+== Assembling debug APK
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.11.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :app
+WARNING: Using flatDir should be avoided because it doesn't support any meta-data formats.
+
+> Configure project :capacitor-cordova-android-plugins
+WARNING: Using flatDir should be avoided because it doesn't support any meta-data formats.
+
+> Task :aparajita-capacitor-secure-storage:preBuild UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:preDebugBuild UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:mergeDebugJniLibFolders UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:mergeDebugNativeLibs NO-SOURCE
+> Task :aparajita-capacitor-secure-storage:stripDebugDebugSymbols NO-SOURCE
+> Task :aparajita-capacitor-secure-storage:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:generateDebugResValues UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:generateDebugResources UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:packageDebugResources UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:parseDebugLocalResources UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:generateDebugRFile UP-TO-DATE
+> Task :capacitor-android:preBuild UP-TO-DATE
+> Task :capacitor-android:preDebugBuild UP-TO-DATE
+> Task :capacitor-android:generateDebugResValues UP-TO-DATE
+> Task :capacitor-android:generateDebugResources UP-TO-DATE
+> Task :capacitor-android:packageDebugResources UP-TO-DATE
+> Task :capacitor-android:parseDebugLocalResources UP-TO-DATE
+> Task :capacitor-android:generateDebugRFile UP-TO-DATE
+> Task :capacitor-android:javaPreCompileDebug UP-TO-DATE
+> Task :capacitor-android:compileDebugJavaWithJavac UP-TO-DATE
+> Task :capacitor-android:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:extractDebugAnnotations UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:javaPreCompileDebug UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:compileDebugJavaWithJavac UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:mergeDebugShaders UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:compileDebugShaders NO-SOURCE
+> Task :aparajita-capacitor-secure-storage:generateDebugAssets UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:packageDebugAssets UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:prepareDebugArtProfile UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:prepareLintJarForPublish UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:processDebugManifest UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:processDebugJavaRes NO-SOURCE
+> Task :aparajita-capacitor-secure-storage:mergeDebugJavaResource UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:syncDebugLibJars UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:writeDebugAarMetadata UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:bundleDebugAar UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:assembleDebug UP-TO-DATE
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :aparajita-capacitor-secure-storage:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:compileDebugLibraryResources UP-TO-DATE
+> Task :capacitor-android:writeDebugAarMetadata UP-TO-DATE
+> Task :capacitor-app:preBuild UP-TO-DATE
+> Task :capacitor-app:preDebugBuild UP-TO-DATE
+> Task :capacitor-app:writeDebugAarMetadata UP-TO-DATE
+> Task :capacitor-community-sqlite:preBuild UP-TO-DATE
+> Task :capacitor-community-sqlite:preDebugBuild UP-TO-DATE
+> Task :capacitor-community-sqlite:writeDebugAarMetadata UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:preBuild UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:preDebugBuild UP-TO-DATE
+> Task :capacitor-keyboard:preBuild UP-TO-DATE
+> Task :capacitor-keyboard:preDebugBuild UP-TO-DATE
+> Task :capacitor-keyboard:writeDebugAarMetadata UP-TO-DATE
+> Task :capacitor-splash-screen:preBuild UP-TO-DATE
+> Task :capacitor-splash-screen:preDebugBuild UP-TO-DATE
+> Task :capacitor-splash-screen:writeDebugAarMetadata UP-TO-DATE
+> Task :capacitor-status-bar:preBuild UP-TO-DATE
+> Task :capacitor-status-bar:preDebugBuild UP-TO-DATE
+> Task :capacitor-status-bar:writeDebugAarMetadata UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :capacitor-app:generateDebugResValues UP-TO-DATE
+> Task :capacitor-app:generateDebugResources UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:writeDebugAarMetadata
+> Task :capacitor-app:packageDebugResources UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :capacitor-community-sqlite:generateDebugResValues UP-TO-DATE
+> Task :capacitor-community-sqlite:generateDebugResources UP-TO-DATE
+> Task :capacitor-community-sqlite:packageDebugResources UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:generateDebugResValues
+> Task :capacitor-cordova-android-plugins:generateDebugResources
+> Task :capacitor-cordova-android-plugins:packageDebugResources
+> Task :capacitor-keyboard:generateDebugResValues UP-TO-DATE
+> Task :capacitor-keyboard:generateDebugResources UP-TO-DATE
+> Task :capacitor-keyboard:packageDebugResources UP-TO-DATE
+> Task :capacitor-splash-screen:generateDebugResValues UP-TO-DATE
+> Task :capacitor-splash-screen:generateDebugResources UP-TO-DATE
+> Task :capacitor-splash-screen:packageDebugResources UP-TO-DATE
+> Task :capacitor-status-bar:generateDebugResValues UP-TO-DATE
+> Task :capacitor-status-bar:generateDebugResources UP-TO-DATE
+> Task :capacitor-status-bar:packageDebugResources UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:extractDeepLinksDebug UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :capacitor-android:extractDeepLinksDebug UP-TO-DATE
+> Task :capacitor-android:processDebugManifest UP-TO-DATE
+> Task :capacitor-app:extractDeepLinksDebug UP-TO-DATE
+> Task :capacitor-app:processDebugManifest UP-TO-DATE
+> Task :capacitor-community-sqlite:extractDeepLinksDebug UP-TO-DATE
+> Task :capacitor-community-sqlite:processDebugManifest UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:extractDeepLinksDebug
+> Task :capacitor-keyboard:extractDeepLinksDebug UP-TO-DATE
+> Task :capacitor-keyboard:processDebugManifest UP-TO-DATE
+> Task :capacitor-splash-screen:extractDeepLinksDebug UP-TO-DATE
+> Task :capacitor-splash-screen:processDebugManifest UP-TO-DATE
+> Task :capacitor-status-bar:extractDeepLinksDebug UP-TO-DATE
+> Task :capacitor-status-bar:processDebugManifest UP-TO-DATE
+> Task :capacitor-android:compileDebugLibraryResources UP-TO-DATE
+> Task :capacitor-app:compileDebugLibraryResources UP-TO-DATE
+> Task :capacitor-app:parseDebugLocalResources UP-TO-DATE
+> Task :capacitor-app:generateDebugRFile UP-TO-DATE
+> Task :capacitor-community-sqlite:compileDebugLibraryResources UP-TO-DATE
+> Task :capacitor-community-sqlite:parseDebugLocalResources UP-TO-DATE
+> Task :capacitor-community-sqlite:generateDebugRFile UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:compileDebugLibraryResources
+> Task :capacitor-keyboard:compileDebugLibraryResources UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:processDebugManifest
+> Task :capacitor-keyboard:parseDebugLocalResources UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:parseDebugLocalResources
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :capacitor-keyboard:generateDebugRFile UP-TO-DATE
+> Task :capacitor-splash-screen:compileDebugLibraryResources UP-TO-DATE
+> Task :capacitor-splash-screen:parseDebugLocalResources UP-TO-DATE
+> Task :capacitor-splash-screen:generateDebugRFile UP-TO-DATE
+> Task :capacitor-status-bar:compileDebugLibraryResources UP-TO-DATE
+> Task :capacitor-status-bar:parseDebugLocalResources UP-TO-DATE
+> Task :capacitor-status-bar:generateDebugRFile UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:generateDebugRFile
+> Task :capacitor-app:javaPreCompileDebug UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+> Task :capacitor-app:compileDebugJavaWithJavac UP-TO-DATE
+> Task :capacitor-app:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :capacitor-community-sqlite:javaPreCompileDebug UP-TO-DATE
+> Task :capacitor-community-sqlite:compileDebugJavaWithJavac UP-TO-DATE
+> Task :capacitor-community-sqlite:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :capacitor-keyboard:javaPreCompileDebug UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:javaPreCompileDebug
+> Task :capacitor-keyboard:compileDebugJavaWithJavac UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:compileDebugJavaWithJavac NO-SOURCE
+> Task :capacitor-keyboard:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :capacitor-splash-screen:javaPreCompileDebug UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:bundleLibCompileToJarDebug
+> Task :capacitor-splash-screen:compileDebugJavaWithJavac UP-TO-DATE
+> Task :capacitor-splash-screen:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :capacitor-status-bar:javaPreCompileDebug UP-TO-DATE
+> Task :capacitor-status-bar:compileDebugJavaWithJavac UP-TO-DATE
+> Task :capacitor-status-bar:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :app:compileDebugJavaWithJavac UP-TO-DATE
+> Task :app:mergeDebugShaders UP-TO-DATE
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :capacitor-android:mergeDebugShaders UP-TO-DATE
+> Task :capacitor-android:compileDebugShaders NO-SOURCE
+> Task :capacitor-android:generateDebugAssets UP-TO-DATE
+> Task :capacitor-android:packageDebugAssets UP-TO-DATE
+> Task :capacitor-app:mergeDebugShaders UP-TO-DATE
+> Task :capacitor-app:compileDebugShaders NO-SOURCE
+> Task :capacitor-app:generateDebugAssets UP-TO-DATE
+> Task :capacitor-app:packageDebugAssets UP-TO-DATE
+> Task :capacitor-community-sqlite:mergeDebugShaders UP-TO-DATE
+> Task :capacitor-community-sqlite:compileDebugShaders NO-SOURCE
+> Task :capacitor-community-sqlite:generateDebugAssets UP-TO-DATE
+> Task :capacitor-community-sqlite:packageDebugAssets UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:mergeDebugShaders
+> Task :capacitor-cordova-android-plugins:compileDebugShaders NO-SOURCE
+> Task :capacitor-cordova-android-plugins:generateDebugAssets UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:packageDebugAssets
+> Task :capacitor-keyboard:mergeDebugShaders UP-TO-DATE
+> Task :capacitor-keyboard:compileDebugShaders NO-SOURCE
+> Task :capacitor-keyboard:generateDebugAssets UP-TO-DATE
+> Task :capacitor-keyboard:packageDebugAssets UP-TO-DATE
+> Task :capacitor-splash-screen:mergeDebugShaders UP-TO-DATE
+> Task :capacitor-splash-screen:compileDebugShaders NO-SOURCE
+> Task :capacitor-splash-screen:generateDebugAssets UP-TO-DATE
+> Task :capacitor-splash-screen:packageDebugAssets UP-TO-DATE
+> Task :capacitor-status-bar:mergeDebugShaders UP-TO-DATE
+> Task :capacitor-status-bar:compileDebugShaders NO-SOURCE
+> Task :capacitor-status-bar:generateDebugAssets UP-TO-DATE
+> Task :capacitor-status-bar:packageDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets
+> Task :aparajita-capacitor-secure-storage:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :capacitor-android:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :app:compressDebugAssets
+> Task :capacitor-community-sqlite:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :capacitor-app:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :capacitor-keyboard:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :capacitor-splash-screen:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :capacitor-status-bar:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:bundleLibRuntimeToJarDebug
+> Task :app:desugarDebugFileDependencies UP-TO-DATE
+> Task :app:dexBuilderDebug UP-TO-DATE
+> Task :app:processDebugJavaRes NO-SOURCE
+> Task :capacitor-android:processDebugJavaRes NO-SOURCE
+> Task :capacitor-app:processDebugJavaRes NO-SOURCE
+> Task :capacitor-community-sqlite:processDebugJavaRes UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:processDebugJavaRes NO-SOURCE
+> Task :capacitor-keyboard:processDebugJavaRes NO-SOURCE
+> Task :capacitor-splash-screen:processDebugJavaRes NO-SOURCE
+> Task :capacitor-status-bar:processDebugJavaRes NO-SOURCE
+> Task :app:mergeDebugJavaResource UP-TO-DATE
+> Task :app:mergeDebugGlobalSynthetics UP-TO-DATE
+> Task :app:checkDebugDuplicateClasses UP-TO-DATE
+> Task :app:mergeExtDexDebug UP-TO-DATE
+> Task :app:mergeLibDexDebug UP-TO-DATE
+> Task :app:mergeProjectDexDebug UP-TO-DATE
+> Task :aparajita-capacitor-secure-storage:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :app:mergeDebugJniLibFolders UP-TO-DATE
+> Task :capacitor-android:mergeDebugJniLibFolders UP-TO-DATE
+> Task :capacitor-android:mergeDebugNativeLibs NO-SOURCE
+> Task :capacitor-android:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :capacitor-app:mergeDebugJniLibFolders UP-TO-DATE
+> Task :capacitor-app:mergeDebugNativeLibs NO-SOURCE
+> Task :capacitor-app:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :capacitor-community-sqlite:mergeDebugJniLibFolders UP-TO-DATE
+> Task :capacitor-community-sqlite:mergeDebugNativeLibs NO-SOURCE
+> Task :capacitor-community-sqlite:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:mergeDebugJniLibFolders
+> Task :capacitor-cordova-android-plugins:mergeDebugNativeLibs NO-SOURCE
+> Task :capacitor-cordova-android-plugins:copyDebugJniLibsProjectOnly
+> Task :capacitor-keyboard:mergeDebugJniLibFolders UP-TO-DATE
+> Task :capacitor-keyboard:mergeDebugNativeLibs NO-SOURCE
+> Task :capacitor-keyboard:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :capacitor-splash-screen:mergeDebugJniLibFolders UP-TO-DATE
+> Task :capacitor-splash-screen:mergeDebugNativeLibs NO-SOURCE
+> Task :capacitor-splash-screen:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :capacitor-status-bar:mergeDebugJniLibFolders UP-TO-DATE
+> Task :capacitor-status-bar:mergeDebugNativeLibs NO-SOURCE
+> Task :capacitor-status-bar:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :app:mergeDebugNativeLibs UP-TO-DATE
+> Task :app:stripDebugDebugSymbols UP-TO-DATE
+> Task :app:validateSigningDebug UP-TO-DATE
+> Task :app:writeDebugAppMetadata UP-TO-DATE
+> Task :app:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :capacitor-android:stripDebugDebugSymbols NO-SOURCE
+> Task :capacitor-android:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :capacitor-android:extractDebugAnnotations UP-TO-DATE
+> Task :capacitor-android:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :capacitor-android:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :capacitor-android:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :capacitor-android:prepareDebugArtProfile UP-TO-DATE
+> Task :capacitor-android:prepareLintJarForPublish UP-TO-DATE
+> Task :capacitor-android:mergeDebugJavaResource UP-TO-DATE
+> Task :capacitor-android:syncDebugLibJars UP-TO-DATE
+> Task :capacitor-android:bundleDebugAar UP-TO-DATE
+> Task :capacitor-android:assembleDebug UP-TO-DATE
+> Task :capacitor-app:stripDebugDebugSymbols NO-SOURCE
+> Task :capacitor-app:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :capacitor-app:extractDebugAnnotations UP-TO-DATE
+> Task :capacitor-app:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :capacitor-app:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :capacitor-app:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :capacitor-app:prepareDebugArtProfile UP-TO-DATE
+> Task :capacitor-app:prepareLintJarForPublish UP-TO-DATE
+> Task :capacitor-app:mergeDebugJavaResource UP-TO-DATE
+> Task :capacitor-app:syncDebugLibJars UP-TO-DATE
+> Task :capacitor-app:bundleDebugAar UP-TO-DATE
+> Task :capacitor-app:assembleDebug UP-TO-DATE
+> Task :capacitor-community-sqlite:stripDebugDebugSymbols NO-SOURCE
+> Task :capacitor-community-sqlite:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :capacitor-community-sqlite:extractDebugAnnotations UP-TO-DATE
+> Task :capacitor-community-sqlite:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :capacitor-community-sqlite:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :capacitor-community-sqlite:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :capacitor-community-sqlite:prepareDebugArtProfile UP-TO-DATE
+> Task :capacitor-community-sqlite:prepareLintJarForPublish UP-TO-DATE
+> Task :capacitor-community-sqlite:mergeDebugJavaResource UP-TO-DATE
+> Task :capacitor-community-sqlite:syncDebugLibJars UP-TO-DATE
+> Task :capacitor-community-sqlite:bundleDebugAar UP-TO-DATE
+> Task :capacitor-community-sqlite:assembleDebug UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:stripDebugDebugSymbols NO-SOURCE
+> Task :capacitor-cordova-android-plugins:copyDebugJniLibsProjectAndLocalJars
+> Task :capacitor-cordova-android-plugins:extractDebugAnnotations
+> Task :capacitor-cordova-android-plugins:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:prepareDebugArtProfile UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:prepareLintJarForPublish UP-TO-DATE
+> Task :capacitor-keyboard:stripDebugDebugSymbols NO-SOURCE
+> Task :capacitor-keyboard:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :capacitor-keyboard:extractDebugAnnotations UP-TO-DATE
+> Task :capacitor-keyboard:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :capacitor-keyboard:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :capacitor-keyboard:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :capacitor-keyboard:prepareDebugArtProfile UP-TO-DATE
+> Task :capacitor-keyboard:prepareLintJarForPublish UP-TO-DATE
+> Task :capacitor-keyboard:mergeDebugJavaResource UP-TO-DATE
+> Task :capacitor-keyboard:syncDebugLibJars UP-TO-DATE
+> Task :capacitor-keyboard:bundleDebugAar UP-TO-DATE
+> Task :capacitor-keyboard:assembleDebug UP-TO-DATE
+> Task :capacitor-splash-screen:stripDebugDebugSymbols NO-SOURCE
+> Task :capacitor-splash-screen:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :capacitor-splash-screen:extractDebugAnnotations UP-TO-DATE
+> Task :capacitor-splash-screen:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :capacitor-splash-screen:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :capacitor-splash-screen:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :capacitor-splash-screen:prepareDebugArtProfile UP-TO-DATE
+> Task :capacitor-splash-screen:prepareLintJarForPublish UP-TO-DATE
+> Task :capacitor-splash-screen:mergeDebugJavaResource UP-TO-DATE
+> Task :capacitor-splash-screen:syncDebugLibJars UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:mergeDebugJavaResource
+> Task :capacitor-splash-screen:bundleDebugAar UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:syncDebugLibJars
+> Task :capacitor-cordova-android-plugins:bundleDebugAar
+> Task :capacitor-cordova-android-plugins:assembleDebug
+> Task :capacitor-splash-screen:assembleDebug UP-TO-DATE
+> Task :capacitor-status-bar:stripDebugDebugSymbols NO-SOURCE
+> Task :capacitor-status-bar:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :capacitor-status-bar:extractDebugAnnotations UP-TO-DATE
+> Task :capacitor-status-bar:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :capacitor-status-bar:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :app:packageDebug
+> Task :app:createDebugApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleDebug
+> Task :capacitor-status-bar:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :capacitor-status-bar:prepareDebugArtProfile UP-TO-DATE
+> Task :capacitor-status-bar:prepareLintJarForPublish UP-TO-DATE
+> Task :capacitor-status-bar:mergeDebugJavaResource UP-TO-DATE
+> Task :capacitor-status-bar:syncDebugLibJars UP-TO-DATE
+> Task :capacitor-status-bar:bundleDebugAar UP-TO-DATE
+> Task :capacitor-status-bar:assembleDebug UP-TO-DATE
+
+BUILD SUCCESSFUL in 14s
+250 actionable tasks: 24 executed, 226 up-to-date
+Debug APK: dist-android/TrackerPro-1.0.11-TEST-ACCOUNTS.apk
