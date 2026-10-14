@@ -1,6 +1,6 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { ApiClient, ApiError, isTestAccountsBuild, type AuthResult, type PublicUser } from "./api";
+import { ApiClient, ApiError, type AuthResult, type PublicUser } from "./api";
 import { TestAccountsApiClient } from "./testAccountsApi";
 import { createTokenStore, type CachedUser, type TokenStore } from "./tokenStore";
 
@@ -51,7 +51,9 @@ export function AuthProvider({
 }) {
   const queryClient = useQueryClient();
   const api = useMemo(
-    () => apiProp ?? (isTestAccountsBuild() ? new TestAccountsApiClient() : new ApiClient()),
+    // Literal env check (not a helper call) so the bundler removes the test
+    // accounts module entirely from normal builds.
+    () => apiProp ?? (import.meta.env.VITE_TEST_ACCOUNTS === "1" ? new TestAccountsApiClient() : new ApiClient()),
     [apiProp],
   );
   const store = useMemo(() => storeProp ?? createTokenStore(), [storeProp]);

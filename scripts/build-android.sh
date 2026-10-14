@@ -31,6 +31,10 @@ fi
 
 echo "== Building web bundle"
 npm run build
+if [ "${VITE_TEST_ACCOUNTS:-}" != "1" ] && grep -rq "testmail1@gmail.com" dist/; then
+  echo "ERROR: the normal build contains the built-in test accounts; they must only ship in the TEST-ACCOUNTS variant." >&2
+  exit 1
+fi
 
 if [ ! -d android ]; then
   echo "== Creating Android project"
