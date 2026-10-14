@@ -1,0 +1,26 @@
+
+added 216 packages in 16s
+
+> tracker-pro-server@1.0.0 typecheck
+> tsc -p tsconfig.json --noEmit
+
+
+> tracker-pro-server@1.0.0 test
+> vitest run
+
+
+[1m[7m[36m RUN [39m[27m[22m [36mv2.1.9 [39m[90m/home/runner/work/tracker-pro/tracker-pro/server[39m
+
+ [32m✓[39m test/auth.test.ts [2m([22m[2m28 tests[22m[2m)[22m[33m 1088[2mms[22m[39m
+ [32m✓[39m test/security.test.ts [2m([22m[2m6 tests[22m[2m)[22m[90m 36[2mms[22m[39m
+ [32m✓[39m test/emailCheck.test.ts [2m([22m[2m8 tests[22m[2m)[22m[90m 10[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m3 passed[39m[22m[90m (3)[39m
+[2m      Tests [22m [1m[32m42 passed[39m[22m[90m (42)[39m
+[2m   Start at [22m 08:50:51
+[2m   Duration [22m 2.18s[2m (transform 188ms, setup 0ms, collect 475ms, tests 1.13s, environment 1ms, prepare 198ms)[22m
+
+
+> tracker-pro-server@1.0.0 build
+> tsc -p tsconfig.build.json
+
