@@ -1,0 +1,9 @@
+== install
+Performing Streamed Install
+Success
+== first launch
+== relaunch after force-stop
+== back button on login screen should leave the app without crashing
+OK: launch 1 rendered its first screen
+OK: launch 2 rendered its first screen
+pid1=2112 pid2=2513 status=0

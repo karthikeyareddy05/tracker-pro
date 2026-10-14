@@ -1,0 +1,4 @@
+    flags=0x0
+    versionCode=11 minSdk=23 targetSdk=35
+    versionName=1.0.11
+    flags=[ DEBUGGABLE HAS_CODE ALLOW_CLEAR_USER_DATA ]
