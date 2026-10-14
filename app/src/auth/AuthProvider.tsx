@@ -1,6 +1,7 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { ApiClient, ApiError, type AuthResult, type PublicUser } from "./api";
+import { ApiClient, ApiError, isTestAccountsBuild, type AuthResult, type PublicUser } from "./api";
+import { TestAccountsApiClient } from "./testAccountsApi";
 import { createTokenStore, type CachedUser, type TokenStore } from "./tokenStore";
 
 export type AuthStatus = "loading" | "authenticated" | "unauthenticated";
@@ -49,7 +50,10 @@ export function AuthProvider({
   tokenStore?: TokenStore;
 }) {
   const queryClient = useQueryClient();
-  const api = useMemo(() => apiProp ?? new ApiClient(), [apiProp]);
+  const api = useMemo(
+    () => apiProp ?? (isTestAccountsBuild() ? new TestAccountsApiClient() : new ApiClient()),
+    [apiProp],
+  );
   const store = useMemo(() => storeProp ?? createTokenStore(), [storeProp]);
   const [state, setState] = useState<State>({ status: "loading", user: null, offline: false, notice: null });
 

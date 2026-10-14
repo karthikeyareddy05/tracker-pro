@@ -55,6 +55,15 @@ Every push to `main` builds a debug APK:
 - **GitHub → Releases → `android-latest`**: download `TrackerPro-1.0.<run>-debug.apk` on your phone and open it (allow installing from this source when Android asks).
 - Or **Actions → latest run → Artifacts → `tracker-pro-apk`**.
 
+**Test build (no server needed).** The release also contains `TrackerPro-1.0.<run>-TEST-ACCOUNTS.apk`. It signs in only with two built-in test accounts, entirely on the phone, so the app can be tried before the server is deployed:
+
+| Name | Email | Password |
+| --- | --- | --- |
+| Reema | testmail1@gmail.com | 1234567890 |
+| Greeshma | testmailid2@gmail.com | 112233445566 |
+
+Registration, password reset and account deletion need the real server and are disabled in this build. Don't use the test build for real data you want to keep in sync with an account.
+
 To build locally instead: `VITE_API_BASE_URL=https://your-server.example bash scripts/build-android.sh` (see [docs/ANDROID.md](docs/ANDROID.md)).
 
 ## Configuration you must provide

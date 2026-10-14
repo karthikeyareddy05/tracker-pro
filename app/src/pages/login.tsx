@@ -1,6 +1,6 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ApiError, serverConfigProblem } from "../auth/api";
+import { ApiError, isTestAccountsBuild, serverConfigProblem } from "../auth/api";
 import { useAuth } from "../auth/AuthProvider";
 import { Banner, Button, isValidEmail, PasswordField, TextField } from "../components/ui";
 import { AuthLayout } from "./AuthLayout";
@@ -52,6 +52,11 @@ export default function LoginPage() {
     >
       <form className="form" onSubmit={onSubmit} noValidate>
         {configProblem && <Banner tone="warning">{configProblem}</Banner>}
+        {isTestAccountsBuild() && (
+          <Banner tone="info">
+            Test build: sign in with one of the test accounts. It works without a server; your entries stay on this phone.
+          </Banner>
+        )}
         {notice && <Banner tone="info">{notice}</Banner>}
         {formError && <Banner tone="error">{formError}</Banner>}
         <TextField

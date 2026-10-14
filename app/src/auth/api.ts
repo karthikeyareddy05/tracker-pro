@@ -39,8 +39,14 @@ export function apiBaseUrl(): string {
   return (import.meta.env.VITE_API_BASE_URL ?? "").replace(/\/+$/, "");
 }
 
+/** True for the special build that signs in with built-in test accounts instead of a server. */
+export function isTestAccountsBuild(): boolean {
+  return import.meta.env.VITE_TEST_ACCOUNTS === "1";
+}
+
 /** The Android build needs an absolute HTTPS server URL; same-origin would hit the app bundle. */
 export function serverConfigProblem(): string | null {
+  if (isTestAccountsBuild()) return null;
   const base = apiBaseUrl();
   if (Capacitor.isNativePlatform()) {
     if (!base) return "This build of Tracker Pro doesn't have a server address configured, so sign-in isn't available.";

@@ -17,7 +17,9 @@ VERSION_CODE="${VERSION_CODE:-1}"
 VERSION_NAME="${VERSION_NAME:-1.0.0}"
 export APP_VERSION="${APP_VERSION:-$VERSION_NAME}"
 
-if [ -z "${VITE_API_BASE_URL:-}" ]; then
+if [ "${VITE_TEST_ACCOUNTS:-}" = "1" ]; then
+  echo "NOTE: building the TEST-ACCOUNTS variant (offline sign-in with built-in test accounts, no server)."
+elif [ -z "${VITE_API_BASE_URL:-}" ]; then
   echo "WARNING: VITE_API_BASE_URL is not set. The APK will open, but sign-in and registration will show"
   echo "         'server address not configured' until you rebuild with your server's https URL."
 elif [[ "${VITE_API_BASE_URL}" != https://* ]]; then
@@ -57,8 +59,10 @@ echo "== Assembling debug APK"
 DEBUG_APK="android/app/build/outputs/apk/debug/app-debug.apk"
 test -f "$DEBUG_APK"
 mkdir -p "$ROOT/dist-android"
-cp "$DEBUG_APK" "$ROOT/dist-android/TrackerPro-${VERSION_NAME}-debug.apk"
-echo "Debug APK: dist-android/TrackerPro-${VERSION_NAME}-debug.apk"
+APK_NAME="${APK_NAME:-TrackerPro-${VERSION_NAME}-debug.apk}"
+cp "$DEBUG_APK" "$ROOT/dist-android/${APK_NAME}"
+echo "Debug APK: dist-android/${APK_NAME}"
+if [ -n "${SKIP_RELEASE:-}" ]; then exit 0; fi
 
 if [ -n "${ANDROID_KEYSTORE_FILE:-}" ] && [ -f "${ANDROID_KEYSTORE_FILE}" ]; then
   echo "== Assembling signed release APK"

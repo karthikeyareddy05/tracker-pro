@@ -80,6 +80,9 @@ jobs:
             export ANDROID_KEYSTORE_FILE="$RUNNER_TEMP/release.keystore"
           fi
           bash scripts/build-android.sh 2>&1 | tee ci-out/android-build.log
+          # Second variant: signs in with built-in test accounts, no server needed.
+          VITE_TEST_ACCOUNTS=1 SKIP_RELEASE=1 APK_NAME="TrackerPro-${VERSION_NAME}-TEST-ACCOUNTS.apk" \
+            bash scripts/build-android.sh 2>&1 | tee ci-out/android-build-test-accounts.log
           ls -la dist-android | tee -a ci-out/android-build.log
           cp app/android/app/src/main/AndroidManifest.xml ci-out/ 2>/dev/null || true
           cp app/android/app/build.gradle ci-out/app-build.gradle 2>/dev/null || true
@@ -102,7 +105,7 @@ jobs:
             --target "$GITHUB_SHA" \
             --prerelease \
             --title "Tracker Pro ${VERSION_NAME} (Android)" \
-            --notes "Built from ${GITHUB_SHA} by CI run ${GITHUB_RUN_NUMBER}. ${SERVER_NOTE} Install the *-debug.apk on your phone (allow installs from this source when prompted)."
+            --notes "Built from ${GITHUB_SHA} by CI run ${GITHUB_RUN_NUMBER}. ${SERVER_NOTE} Two files: *-debug.apk uses the real server; *-TEST-ACCOUNTS.apk signs in with the built-in test accounts without any server (testing only). Allow installs from this source when Android asks."
       - name: Publish logs
         if: always()
         env:
