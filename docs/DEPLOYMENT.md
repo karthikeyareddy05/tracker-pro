@@ -29,7 +29,18 @@ The free tier allows a limited number of emails per day and month (see Resend's 
    - `MONGODB_URI` from step 1
    - `RESEND_API_KEY` and `RESEND_FROM_EMAIL` from step 2
    - `APP_BASE_URL`: the service's URL, e.g. `https://tracker-pro.onrender.com`. You can fill it in after the first deploy shows the URL, then redeploy.
-3. After the deploy, open `https://<your-service>.onrender.com/_api/health`. You should see `"database":"reachable"` and `"email":"configured"`.
+3. After the deploy, open `https://<your-service>.onrender.com/_api/health`:
+   - `"database":"reachable"`: MongoDB connected. If MongoDB can't be reached at startup, the deploy fails and the Render log shows `startup failed` with a redacted reason.
+   - `"email":{"key":"valid", …}`: Resend accepted the key. The check calls Resend's API without sending any email.
+     - `keyAccess` is `sending_only` for a sending-access key, which is normal.
+     - `sender` is one of:
+       - `domain_verified`: you're done.
+       - `testing_sender`: `onboarding@resend.dev` was detected.
+       - `domain_not_verified`: verify the domain in Resend.
+       - `unknown`: sending-only keys can't see domain status.
+   - `"key":"invalid"`: Resend rejected the key. Re-paste it with no spaces or quotes.
+   - `"key":"not_configured"`: the variable isn't set.
+4. The only full test of email is a real reset: in the app, use **Forgot password?** with your own email address and check that the email arrives.
 
 On Render's free plan the server sleeps after about 15 minutes idle. The first request afterwards can take around a minute, so the app may show its loading screen briefly.
 

@@ -8,6 +8,7 @@ import type { AppConfig } from "./config.js";
 import type { Collections } from "./db.js";
 import { ApiError, Errors } from "./errors.js";
 import { logger } from "./logger.js";
+import type { EmailCheckResult } from "./emailCheck.js";
 import type { Mailer } from "./mailer.js";
 import { PASSWORD_MAX_LENGTH } from "./security.js";
 import {
@@ -37,6 +38,8 @@ export interface CreateAppOptions {
   now?: () => Date;
   /** Optional readiness probe, e.g. a MongoDB ping. */
   healthCheck?: () => Promise<void>;
+  /** Latest result of the Resend configuration check (no secrets). */
+  emailStatus?: () => EmailCheckResult | null;
 }
 
 /* ---------------------------- validation ---------------------------- */
@@ -187,11 +190,17 @@ export function createApp(options: CreateAppOptions) {
   api.get(
     "/health",
     asyncHandler(async (_req, res) => {
+      const check = options.emailStatus?.() ?? null;
+      const email = check
+        ? { key: check.key, ...(check.keyAccess ? { keyAccess: check.keyAccess } : {}), sender: check.sender }
+        : deps.mailer.configured
+          ? "configured"
+          : "not_configured";
       try {
         await options.healthCheck?.();
-        res.json({ status: "ok", database: options.healthCheck ? "reachable" : "unchecked", email: deps.mailer.configured ? "configured" : "not_configured" });
+        res.json({ status: "ok", database: options.healthCheck ? "reachable" : "unchecked", email });
       } catch {
-        res.status(503).json({ status: "degraded", database: "unreachable" });
+        res.status(503).json({ status: "degraded", database: "unreachable", email });
       }
     }),
   );

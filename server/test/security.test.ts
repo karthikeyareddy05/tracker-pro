@@ -58,3 +58,13 @@ describe("reset email", () => {
     expect(text).toContain("30 minutes");
   });
 });
+
+describe("secret redaction", () => {
+  it("masks credentials in connection strings and Resend keys", async () => {
+    const { redact } = await import("../src/redact.js");
+    expect(redact("connect failed mongodb+srv://karthik:Sup3r@cluster0.abc.mongodb.net/db")).toBe(
+      "connect failed mongodb+srv://***:***@cluster0.abc.mongodb.net/db",
+    );
+    expect(redact("bad key re_ABCDEFGHIJ")).toBe("bad key re_***");
+  });
+});

@@ -341,6 +341,29 @@ describe("profile and account deletion", () => {
   });
 });
 
+describe("health check", () => {
+  it("reports database and email status without exposing the key", async () => {
+    const { createApp } = await import("../src/app.js");
+    const app = createApp({
+      collections: h.c,
+      config: { ...h.config, resendApiKey: "re_SECRETVALUE_123456", resendFromEmail: "a@example.com" },
+      mailer: h.mailer,
+      healthCheck: async () => {
+        await h.db.command({ ping: 1 });
+      },
+      emailStatus: () => ({ key: "valid", keyAccess: "sending_only", sender: "unknown", detail: "ok" }),
+    });
+    const res = await request(app).get("/_api/health");
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      status: "ok",
+      database: "reachable",
+      email: { key: "valid", keyAccess: "sending_only", sender: "unknown" },
+    });
+    expect(JSON.stringify(res.body)).not.toContain("re_SECRET");
+  });
+});
+
 describe("transport and errors", () => {
   it("answers CORS preflight for the Android app origin only", async () => {
     const ok = await request(h.app)
