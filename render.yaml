@@ -1,0 +1,33 @@
+# Render Blueprint: deploys the Tracker Pro API (and the web pages used by password-reset links).
+# In Render: New → Blueprint → select this repository. Then fill in the secret values when prompted.
+services:
+  - type: web
+    name: tracker-pro
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: >-
+      cd app && npm install --include=dev && npm run build &&
+      cd ../server && npm install --include=dev && npm run build
+    startCommand: cd server && node dist/index.js
+    healthCheckPath: /_api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: "22"
+      - key: TRUST_PROXY
+        value: "1"
+      - key: WEB_DIST_DIR
+        value: ../app/dist
+      - key: MONGODB_DB_NAME
+        value: tracker_pro
+      - key: MONGODB_URI
+        sync: false
+      - key: APP_BASE_URL
+        sync: false
+      - key: RESEND_API_KEY
+        sync: false
+      - key: RESEND_FROM_EMAIL
+        sync: false

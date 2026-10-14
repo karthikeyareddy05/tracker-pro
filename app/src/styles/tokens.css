@@ -1,0 +1,94 @@
+:root,
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #fbf7f1;
+  --bg-tint: #f6efe6;
+  --surface: #fffdf9;
+  --surface-2: #f4ede4;
+  --surface-sunken: #efe7dc;
+  --border: #e8ded3;
+  --border-strong: #d7c9bb;
+
+  --text: #3b1f3a;
+  --text-2: #6e5670;
+  --text-3: #8f7c8c;
+  --text-on-accent: #fffaf6;
+
+  --plum: #5b2a55;
+  --plum-strong: #4a2145;
+  --plum-soft: #efe3ec;
+  --sage: #6f8f75;
+  --sage-strong: #557459;
+  --sage-soft: #e3ebe1;
+  --rose: #b85d70;
+  --rose-soft: #f6e3e4;
+  --rose-line: #d98d9b;
+  --amber: #a8742a;
+  --amber-soft: #f6ead6;
+  --danger: #b0413b;
+  --danger-soft: #f8e1de;
+  --focus: #8a4f82;
+
+  --shadow-sm: 0 1px 2px rgba(59, 31, 58, 0.06);
+  --shadow-md: 0 1px 2px rgba(59, 31, 58, 0.05), 0 8px 24px -12px rgba(59, 31, 58, 0.18);
+  --overlay: rgba(43, 22, 41, 0.38);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #19131a;
+  --bg-tint: #1e1720;
+  --surface: #231b24;
+  --surface-2: #2b222c;
+  --surface-sunken: #150f16;
+  --border: #3a2f3b;
+  --border-strong: #4c3f4d;
+
+  --text: #f4ebf0;
+  --text-2: #cdbbc8;
+  --text-3: #9d8b99;
+  --text-on-accent: #1d141d;
+
+  --plum: #d6a9ce;
+  --plum-strong: #e6c2df;
+  --plum-soft: #3a2639;
+  --sage: #9dbaa2;
+  --sage-strong: #b6cfba;
+  --sage-soft: #26302a;
+  --rose: #e08a9a;
+  --rose-soft: #3e2329;
+  --rose-line: #b86d7c;
+  --amber: #e0b36a;
+  --amber-soft: #3a2e1d;
+  --danger: #ef8b82;
+  --danger-soft: #3d1f1d;
+  --focus: #e0b3d8;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 1px 2px rgba(0, 0, 0, 0.3), 0 10px 28px -14px rgba(0, 0, 0, 0.6);
+  --overlay: rgba(0, 0, 0, 0.55);
+}
+
+:root {
+  --font-display: "Fraunces Variable", "Iowan Old Style", Georgia, serif;
+  --font-ui: "Inter Variable", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  --nav-height: 64px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --content-max: 560px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}

@@ -119,6 +119,8 @@ export function createApp(options: CreateAppOptions) {
           "connect-src": ["'self'"],
           "img-src": ["'self'", "data:"],
           "font-src": ["'self'", "data:"],
+          // Only force https in production; local http (dev/e2e) must keep working.
+          "upgrade-insecure-requests": config.isProduction ? [] : null,
         },
       },
       crossOriginEmbedderPolicy: false,
