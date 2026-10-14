@@ -38,7 +38,7 @@ test("full journey against the real API", async ({ page }) => {
   // Registration
   await page.getByRole("link", { name: "Create an account" }).click();
   await page.getByLabel("Full name").fill("Asha Rao");
-  await page.getByLabel("Email").fill(EMAIL);
+  await page.getByLabel("Email", { exact: true }).fill(EMAIL);
   await page.getByLabel("Password", { exact: true }).fill(PASSWORD);
   await page.getByLabel("Confirm password").fill(PASSWORD);
   await page.getByRole("checkbox").check();
@@ -104,12 +104,12 @@ test("full journey against the real API", async ({ page }) => {
 
   // Lockout after 3 wrong passwords
   for (let i = 0; i < 3; i++) {
-    await page.getByLabel("Email").fill(EMAIL);
+    await page.getByLabel("Email", { exact: true }).fill(EMAIL);
     await page.getByLabel("Password", { exact: true }).fill("WrongPass123");
     await page.getByRole("button", { name: "Sign in" }).click();
     await expect(page.getByText("Incorrect email or password.")).toBeVisible();
   }
-  await page.getByLabel("Email").fill(EMAIL);
+  await page.getByLabel("Email", { exact: true }).fill(EMAIL);
   await page.getByLabel("Password", { exact: true }).fill(PASSWORD);
   await page.getByRole("button", { name: "Sign in" }).click();
   await expect(page.getByText(/Too many failed sign-in attempts/)).toBeVisible();
@@ -117,7 +117,7 @@ test("full journey against the real API", async ({ page }) => {
 
   // Forgot password → reset (also clears the lockout)
   await page.getByRole("link", { name: "Forgot password?" }).click();
-  await page.getByLabel("Email").fill(EMAIL);
+  await page.getByLabel("Email", { exact: true }).fill(EMAIL);
   await page.getByRole("button", { name: "Send reset link" }).click();
   await expect(page.getByText(/If an account exists for this email/)).toBeVisible();
   await shot(page, "11-forgot");
@@ -140,7 +140,7 @@ test("full journey against the real API", async ({ page }) => {
 
   // Sign in with the new password; local records are still there.
   await page.goto("/login");
-  await page.getByLabel("Email").fill(EMAIL);
+  await page.getByLabel("Email", { exact: true }).fill(EMAIL);
   await page.getByLabel("Password", { exact: true }).fill(NEW_PASSWORD);
   await page.getByRole("button", { name: "Sign in" }).click();
   await expect(page.getByRole("heading", { level: 1, name: /, Asha$/ })).toBeVisible();

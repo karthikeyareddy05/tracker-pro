@@ -55,9 +55,18 @@ if [ -z "$PID1" ] || [ -z "$PID2" ]; then
   echo "FAIL: app process was not running after launch (pid1='$PID1' pid2='$PID2')"
   STATUS=1
 fi
-if grep -q "Capacitor/Console.*E/" "$OUT/logcat-app.txt"; then
-  echo "WARN: JavaScript console errors found:"
-  grep "Capacitor/Console" "$OUT/logcat-app.txt" | head -40
+if grep -E "E Capacitor/Console" "$OUT/logcat-app.txt" | grep -q "Uncaught"; then
+  echo "FAIL: uncaught JavaScript error in the app:"
+  grep -E "E Capacitor/Console" "$OUT/logcat-app.txt" | head -20
+  STATUS=1
 fi
+# The first screen for a signed-out user is the login page; make sure it actually rendered
+# (and the app isn't stuck on the launch screen).
+for f in "$OUT/ui-first-launch.xml" "$OUT/ui-relaunch.xml"; do
+  if ! grep -q "Welcome back" "$f" 2>/dev/null; then
+    echo "FAIL: login screen text not found in $(basename "$f")"
+    STATUS=1
+  fi
+done
 echo "pid1=$PID1 pid2=$PID2 status=$STATUS" | tee "$OUT/result.txt"
 exit $STATUS

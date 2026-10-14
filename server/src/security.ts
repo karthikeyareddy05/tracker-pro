@@ -14,7 +14,7 @@ function argonOptions() {
   return {
     type: argon2.argon2id,
     memoryCost: fast ? 4096 : 19_456,
-    timeCost: fast ? 1 : 2,
+    timeCost: 2,
     parallelism: 1,
   } as const;
 }

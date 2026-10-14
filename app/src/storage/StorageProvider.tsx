@@ -19,7 +19,12 @@ export function StorageProvider({
   useEffect(() => {
     let cancelled = false;
     setError(null);
-    open()
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const timeout = new Promise<never>((_, reject) => {
+      timer = setTimeout(() => reject(new Error("On-device storage took too long to open.")), 20_000);
+    });
+    Promise.race([open(), timeout])
+      .finally(() => clearTimeout(timer))
       .then((s) => {
         if (!cancelled) setStore(s);
       })

@@ -13,6 +13,11 @@ concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
+defaults:
+  run:
+    # Explicit bash enables -o pipefail, so `cmd | tee log` fails when cmd fails.
+    shell: bash
+
 env:
   FORCE_COLOR: "0"
   NPM_CONFIG_FUND: "false"

@@ -1,3 +1,4 @@
+import { SecureStorage } from "@aparajita/capacitor-secure-storage";
 import { Capacitor } from "@capacitor/core";
 
 /**
@@ -57,28 +58,49 @@ function webStore(): TokenStore {
   };
 }
 
+/**
+ * Rejects if a native call doesn't answer in time, so a stalled plugin can
+ * never leave the app stuck on the launch screen.
+ */
+function withTimeout<T>(work: Promise<T>, ms = 8000): Promise<T> {
+  return new Promise<T>((resolve, reject) => {
+    const timer = setTimeout(() => reject(new Error("Secure storage did not respond")), ms);
+    work.then(
+      (value) => {
+        clearTimeout(timer);
+        resolve(value);
+      },
+      (error: unknown) => {
+        clearTimeout(timer);
+        reject(error);
+      },
+    );
+  });
+}
+
 function nativeStore(): TokenStore {
-  const plugin = () => import("@aparajita/capacitor-secure-storage").then((m) => m.SecureStorage);
+  // Note: a Capacitor plugin object must never be returned from a promise or
+  // async function. Promise resolution probes it for `.then`, which the plugin
+  // proxy treats as an unimplemented native method, and the promise never settles.
   const getString = async (key: string): Promise<string | null> => {
-    const value = await (await plugin()).get(key);
+    const value = await withTimeout(SecureStorage.get(key));
     if (value === null || value === undefined) return null;
     return typeof value === "string" ? value : JSON.stringify(value);
   };
   return {
     getRefreshToken: () => getString(REFRESH_KEY),
     async setRefreshToken(token) {
-      await (await plugin()).set(REFRESH_KEY, token);
+      await withTimeout(SecureStorage.set(REFRESH_KEY, token));
     },
     async getCachedUser() {
       return parseUser(await getString(USER_KEY));
     },
     async setCachedUser(user) {
-      await (await plugin()).set(USER_KEY, JSON.stringify(user));
+      await withTimeout(SecureStorage.set(USER_KEY, JSON.stringify(user)));
     },
     async clear() {
-      const s = await plugin();
-      await s.remove(REFRESH_KEY);
-      await s.remove(USER_KEY);
+      await withTimeout(SecureStorage.remove(REFRESH_KEY));
+      await withTimeout(SecureStorage.remove(USER_KEY));
     },
   };
 }
