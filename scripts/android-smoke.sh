@@ -25,6 +25,8 @@ sleep 30
 adb exec-out screencap -p > "$OUT/01-first-launch.png"
 adb shell uiautomator dump /sdcard/ui1.xml >/dev/null 2>&1 && adb pull /sdcard/ui1.xml "$OUT/ui-first-launch.xml" >/dev/null 2>&1
 PID1=$(adb shell pidof "$PKG" | tr -d '\r' || true)
+adb logcat -d > "$OUT/logcat-launch1.txt"
+adb logcat -c
 
 echo "== relaunch after force-stop"
 adb shell am force-stop "$PKG"
@@ -34,12 +36,14 @@ sleep 20
 adb exec-out screencap -p > "$OUT/02-relaunch.png"
 adb shell uiautomator dump /sdcard/ui2.xml >/dev/null 2>&1 && adb pull /sdcard/ui2.xml "$OUT/ui-relaunch.xml" >/dev/null 2>&1
 PID2=$(adb shell pidof "$PKG" | tr -d '\r' || true)
+adb logcat -d > "$OUT/logcat-launch2.txt"
 
 echo "== back button on login screen should leave the app without crashing"
 adb shell input keyevent KEYCODE_BACK
 sleep 3
 
-adb logcat -d > "$OUT/logcat-full.txt"
+adb logcat -d > "$OUT/logcat-after-back.txt"
+cat "$OUT/logcat-launch1.txt" "$OUT/logcat-launch2.txt" "$OUT/logcat-after-back.txt" > "$OUT/logcat-full.txt"
 grep -iE "$PKG|Capacitor|chromium|AndroidRuntime|SQLite|WebView|Console" "$OUT/logcat-full.txt" > "$OUT/logcat-app.txt" || true
 adb shell dumpsys package "$PKG" | grep -E "versionName|versionCode|targetSdk|minSdk|allowBackup|flags=" > "$OUT/package.txt" || true
 
@@ -60,12 +64,15 @@ if grep -E "E Capacitor/Console" "$OUT/logcat-app.txt" | grep -q "Uncaught"; the
   grep -E "E Capacitor/Console" "$OUT/logcat-app.txt" | head -20
   STATUS=1
 fi
-# The first screen for a signed-out user is the login page; make sure it actually rendered
-# (and the app isn't stuck on the launch screen).
-for f in "$OUT/ui-first-launch.xml" "$OUT/ui-relaunch.xml"; do
-  if ! grep -q "Welcome back" "$f" 2>/dev/null; then
-    echo "FAIL: login screen text not found in $(basename "$f")"
+# The app hides the native splash screen only after its first real screen has
+# rendered (session check finished). WebView text isn't visible to uiautomator,
+# so this plugin call is the reliable signal that the UI came up.
+for n in 1 2; do
+  if ! grep -q "pluginId: SplashScreen, methodName: hide" "$OUT/logcat-launch$n.txt"; then
+    echo "FAIL: launch $n never left the splash screen"
     STATUS=1
+  else
+    echo "OK: launch $n rendered its first screen"
   fi
 done
 echo "pid1=$PID1 pid2=$PID2 status=$STATUS" | tee "$OUT/result.txt"

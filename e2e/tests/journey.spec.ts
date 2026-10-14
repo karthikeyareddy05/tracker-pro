@@ -131,7 +131,9 @@ test("full journey against the real API", async ({ page }) => {
   expect(page.url()).not.toContain("token=");
   await shot(page, "12-reset-done");
 
-  // The link is single-use.
+  // The link is single-use. Leave the page first: navigating to the same path
+  // with only a new #fragment would not reload the app.
+  await page.goto("about:blank");
   await page.goto(resetUrl);
   await page.getByLabel("New password", { exact: true }).fill("Another2026!x");
   await page.getByLabel("Confirm new password").fill("Another2026!x");

@@ -154,7 +154,9 @@ jobs:
         with:
           api-level: 34
           arch: x86_64
-          target: google_apis
+          # AOSP image without Google Play Services: GMS crashes on CI emulators
+          # kill apps that depend on it (seen as 'depends on provider ... FontsProvider').
+          target: default
           disable-animations: true
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           script: bash scripts/android-smoke.sh "$(ls apk/*-debug.apk | head -n1)" smoke-out
