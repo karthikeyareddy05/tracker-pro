@@ -1,0 +1,6 @@
+
+Running 1 test using 1 worker
+
+  ✓  1 [phone-light] › tests/journey.spec.ts:26:1 › full journey against the real API (11.2s)
+
+  1 passed (14.0s)

@@ -1,0 +1,62 @@
+
+added 216 packages in 17s
+added 435 packages in 17s
+
+> tracker-pro-app@1.0.0 build
+> vite build
+
+[36mvite v5.4.21 [32mbuilding for production...[36m[39m
+transforming...
+[32m✓[39m 141 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                                             [39m[1m[2m  0.72 kB[22m[1m[22m[2m │ gzip:  0.39 kB[22m
+[2mdist/[22m[2massets/[22m[32minter-vietnamese-wght-normal-CBcvBZtf.woff2     [39m[1m[2m 10.25 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32minter-greek-ext-wght-normal-DlzME5K_.woff2      [39m[1m[2m 11.23 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32mfraunces-vietnamese-wght-normal-CnvboYUG.woff2  [39m[1m[2m 11.57 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32minter-cyrillic-wght-normal-DqGufNeO.woff2       [39m[1m[2m 18.75 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32minter-greek-wght-normal-CkhJZR-_.woff2          [39m[1m[2m 19.00 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32minter-cyrillic-ext-wght-normal-BOeWTOD4.woff2   [39m[1m[2m 25.96 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32mfraunces-latin-ext-wght-normal-Ca2vKHc0.woff2   [39m[1m[2m 33.58 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32mfraunces-latin-wght-normal-ukD16Tqj.woff2       [39m[1m[2m 36.62 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32minter-latin-wght-normal-Dx4kXJAl.woff2          [39m[1m[2m 48.26 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32minter-latin-ext-wght-normal-DO1Apj_S.woff2      [39m[1m[2m 85.07 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32msql-wasm-DfANybxk.wasm                          [39m[1m[2m658.41 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[35mindex-vnQNk7-C.css                              [39m[1m[2m 24.65 kB[22m[1m[22m[2m │ gzip:  5.78 kB[22m
+[2mdist/[22m[2massets/[22m[36mweb-DUtGjQMq.js                                 [39m[1m[2m  0.12 kB[22m[1m[22m[2m │ gzip:  0.13 kB[22m
+[2mdist/[22m[2massets/[22m[36mindex-D7hJPE-s.js                               [39m[1m[2m  0.27 kB[22m[1m[22m[2m │ gzip:  0.22 kB[22m
+[2mdist/[22m[2massets/[22m[36mindex-BShYkNbE.js                               [39m[1m[2m  0.33 kB[22m[1m[22m[2m │ gzip:  0.24 kB[22m
+[2mdist/[22m[2massets/[22m[36mindex-tu0jBYj4.js                               [39m[1m[2m  0.36 kB[22m[1m[22m[2m │ gzip:  0.25 kB[22m
+[2mdist/[22m[2massets/[22m[36mnative-DHJUXfMs.js                              [39m[1m[2m  0.75 kB[22m[1m[22m[2m │ gzip:  0.35 kB[22m
+[2mdist/[22m[2massets/[22m[36mweb-C3VfSTAq.js                                 [39m[1m[2m  0.76 kB[22m[1m[22m[2m │ gzip:  0.35 kB[22m
+[2mdist/[22m[2massets/[22m[36mweb-DIaUCn7i.js                                 [39m[1m[2m  0.79 kB[22m[1m[22m[2m │ gzip:  0.41 kB[22m
+[2mdist/[22m[2massets/[22m[36mbase-Bw23-si6.js                                [39m[1m[2m  2.53 kB[22m[1m[22m[2m │ gzip:  0.93 kB[22m
+[2mdist/[22m[2massets/[22m[36mcalendar-Cc052qbC.js                            [39m[1m[2m  5.69 kB[22m[1m[22m[2m │ gzip:  2.22 kB[22m
+[2mdist/[22m[2massets/[22m[36minsights-iiAJLi5T.js                            [39m[1m[2m  8.32 kB[22m[1m[22m[2m │ gzip:  2.92 kB[22m
+[2mdist/[22m[2massets/[22m[36mtrack-De4q3Uya.js                               [39m[1m[2m  9.22 kB[22m[1m[22m[2m │ gzip:  3.34 kB[22m
+[2mdist/[22m[2massets/[22m[36mprofile-jqsZMr_F.js                             [39m[1m[2m  9.48 kB[22m[1m[22m[2m │ gzip:  3.14 kB[22m
+[2mdist/[22m[2massets/[22m[36mweb-BOe8CVSM.js                                 [39m[1m[2m  9.63 kB[22m[1m[22m[2m │ gzip:  1.34 kB[22m
+[2mdist/[22m[2massets/[22m[36mnativeDriver-D5CRbNm8.js                        [39m[1m[2m 14.49 kB[22m[1m[22m[2m │ gzip:  2.93 kB[22m
+[2mdist/[22m[2massets/[22m[36mwebDriver-BHlqEYek.js                           [39m[1m[2m 41.49 kB[22m[1m[22m[2m │ gzip: 15.05 kB[22m
+[2mdist/[22m[2massets/[22m[36mindex-BuGpCTjt.js                               [39m[1m[2m275.66 kB[22m[1m[22m[2m │ gzip: 88.10 kB[22m
+[32m✓ built in 1.70s[39m
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 2.2 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 2.2 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 2.2 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 2.2 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 2.2 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 2.2 MiB
+FFmpeg (playwright ffmpeg v1013) downloaded to /home/runner/.cache/ms-playwright/ffmpeg-1013
+Downloading Chrome Headless Shell 156.0.8078.4 (playwright chromium-headless-shell v1248) from https://cdn.playwright.dev/builds/cft/156.0.8078.4/linux64/chrome-headless-shell-linux64.zip
+|                                                                                |   0% of 120 MiB
+|■■■■■■■■                                                                        |  10% of 120 MiB
+|■■■■■■■■■■■■■■■■                                                                |  20% of 120 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 120 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 120 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 120 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 120 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 120 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 120 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 120 MiB
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 120 MiB
+Chrome Headless Shell 156.0.8078.4 (playwright chromium-headless-shell v1248) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1248
