@@ -23,8 +23,8 @@ jobs:
     name: Server — typecheck, tests, build
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
       - name: Install, typecheck, test, build
@@ -45,15 +45,20 @@ jobs:
       VERSION_NAME: 1.0.${{ github.run_number }}
       VITE_API_BASE_URL: ${{ vars.API_BASE_URL }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: 21
-      - uses: android-actions/setup-android@v3
+      - name: Check preinstalled Android SDK
+        run: |
+          mkdir -p ci-out
+          echo "ANDROID_HOME=$ANDROID_HOME" | tee ci-out/android-sdk.txt
+          ls "$ANDROID_HOME/platforms" "$ANDROID_HOME/build-tools" 2>&1 | tee -a ci-out/android-sdk.txt
+          java -version 2>&1 | tee -a ci-out/android-sdk.txt
       - name: Install, typecheck, unit tests
         run: |
           mkdir -p ci-out
@@ -103,8 +108,8 @@ jobs:
     name: End-to-end — real API + web app in a phone-sized browser
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
       - name: Install and build
@@ -129,7 +134,7 @@ jobs:
     needs: app
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: actions/download-artifact@v4
         with:
           name: tracker-pro-apk
